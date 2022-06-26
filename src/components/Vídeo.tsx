@@ -1,8 +1,8 @@
 import { DiscordLogo, Lightning } from 'phosphor-react'
-import { gql, useQuery } from '@apollo/client'
 import { ExtraContentCard } from './ExtraContentCard'
 import { Footer } from './Footer'
 import { useGetLessonBySlugQuery } from '../graphql/generated'
+import { Loading } from './Loading'
 
 interface VideoProps {
   lessonSlug: string
@@ -17,8 +17,8 @@ export function Video({ lessonSlug }: VideoProps) {
 
   if (!data || !data.lesson) {
     return (
-      <div className="flex-1">
-        <p>Carregando...</p>
+      <div className='w-full h-[calc(100vh-80px)] flex items-center justify-center'>
+        <Loading size={80}/>
       </div>
     )
   }

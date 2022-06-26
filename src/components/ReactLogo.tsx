@@ -6,6 +6,7 @@ export function ReactIcon() {
       height="575"
       fill="none"
       viewBox="0 0 654 575"
+      className="overflow-hidden w-[98vw] lg:w-654 lg:h-575"
     >
       <path
         fill="url(#paint0_linear_24_689)"
