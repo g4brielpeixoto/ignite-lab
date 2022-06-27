@@ -2,8 +2,6 @@ export function ReactIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="654"
-      height="575"
       fill="none"
       viewBox="0 0 654 575"
       className="overflow-hidden w-[98vw] lg:w-654 lg:h-575"

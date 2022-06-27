@@ -32,7 +32,7 @@ export function Subscribe() {
       </div>
       <div className="flex flex-col lg:flex-row gap-10 lg:px-8 items-center justify-between mt-20 z-10">
         <div className="flex flex-col px-2 items-center max-w-[26rem] lg:items-start lg:max-w-[640px]">
-          <Logo />
+          <Logo className='w-[237px] h-[34px]'/>
 
           <h1 className="mt-8 text-[2.5rem] leading-tight text-center lg:text-left">
             Construa uma <strong className="text-blue-500">aplicação completa</strong>, do zero,{' '}
@@ -73,7 +73,7 @@ export function Subscribe() {
           </form>
         </div>
       </div>
-      <img src={codeMockupImage} className="p-10" />
+      <img src={codeMockupImage} className="p-3 md:p-10" />
       <Footer />
     </div>
   )

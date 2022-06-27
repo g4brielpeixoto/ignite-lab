@@ -1,7 +1,8 @@
 import { CheckCircle, Lock } from 'phosphor-react'
 import { isPast, format } from 'date-fns'
-import { ptBR } from 'date-fns/locale'
+import ptBR from 'date-fns/locale/pt-BR';
 import { Link, useParams } from 'react-router-dom'
+import { useSidebar } from '../hooks/useSidebar'
 
 interface LessonProps {
   title: string
@@ -14,8 +15,9 @@ export function Lesson(props: LessonProps) {
   const isLessonAvailable = isPast(props.availableAt)
   const { slug } = useParams<{ slug: string }>()
   const isActiveLesson = props.slug === slug
+  const { closeSidebar } = useSidebar()
 
-  let availableDateFormat = format(props.availableAt, "EEEE' • 'd' de 'MMMM' • 'K'h'mm", {
+  let availableDateFormat = format(props.availableAt, "EE' • 'd' de 'MMMM' • 'k'h'mm", {
     locale: ptBR
   })
   availableDateFormat =
@@ -25,6 +27,7 @@ export function Lesson(props: LessonProps) {
     <Link
       to={`/event/lesson/${props.slug}`}
       className={`${!isLessonAvailable ? 'pointer-events-none' : ''} group`}
+      onClick={closeSidebar}
     >
       <span className="text-gray-300">{availableDateFormat}</span>
 
